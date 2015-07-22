@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+/*
+h1,h2,h3,h4,h5,h6 {
+  /* border: 1px solid red; */
+  border-left: 10px solid blue;
+  padding-left: 10px;
+}
+*/
+p {
+  border-width: 2px;
+  border-color: blue;
+  border-style: dashed;
+  background-color: yellow;
+  padding: 10px;
+}
+
+.ohora {
+  border: 10px dotted white;
+}
+
+.btn {
+  display: inline-block; /* block처럼 자신만의 영역을 유지한다. inline처럼 라인에 포함됨*/
+  border: 1px solid gray;
+  background-color: lightgray;
+  margin: 5px; /* 테두리 바깥 쪽의 여백 지정 */
+  padding: 10px;/* 테두리 안 쪽의 여백 지정 */
+  text-decoration: none; /* a 태그의 밑줄 제거하기 */
+  border-radius: 5px; /* 모서리 둥글게 다듬기 */
+}
+
+.primary {
+  border-style: none;
+  background-color: lightskyblue;
+}
+
+/* pseudo selector: 태그의 특정 상태를 가리킴 */
+a:LINK { /* 방문한 적인 없다*/
+  /* color: white; */
+}
+
+a:VISITED { /* 한 번 방문했다 */
+	/* color: white; */
+}
+
+a:HOVER { /* 마우스가 링크 위에 있다 */
+	background-color: blue;
+	color: white;
+}
+
+food {
+  font-size: 150%;
+  font-weight: bold;
+  text-decoration: underline;
+}
+price {
+  font-style: italic;
+  background-color: yellow;
+}
+
+ul {
+  list-style: upper-roman;
+}
+
+dt {
+  background-color: yellow;
+  margin-right: 820px;
+  text-align: right;
+}
+
+table {
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+}
+
+th, td {
+  /* border: 1px solid black; */
+  padding: 5px;
+}
+
+tr:NTH-CHILD(odd) {
+  background-color: yellow;
+}
+
+tr:FIRST-CHILD {
+  background-color: white;
+  border-bottom: 1px solid black;
+  color: darkgray;
+}
+
+tr:LAST-CHILD {
+  border-bottom: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+<!-- 테이블 만들기 2
+=> 테이블의 기능을 상세히 정의하기 
+-->
+<table>
+  <caption>회원정보 테이블</caption>
+  <colgroup>
+    <col style="background-color:blue;">
+    <col style="font-weight:bold;"> <!-- 크롬에서 적용 안됨. -->
+    <col style="font-style:italic;"> <!-- 크롬에서 적용 안됨. -->
+    <col style="background-color:red;">
+  </colgroup>
+  <thead style="background-color:yellow">
+    <tr> 
+      <th>번호</th> 
+      <th>이름</th>
+      <th>이메일</th>
+      <th>전화번호</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td> <!-- table data -->
+      <td>홍길동</td>
+      <td>hong@test.com</td>
+      <td>111-1111</td>
+    </tr>
+    <tr>
+      <td>2</td> 
+      <td>임꺽정</td>
+      <td>leem@test.com</td>
+      <td>111-2222</td>
+    </tr>
+    <tr>
+      <td>3</td>   
+      <td>유관순</td>
+      <td>yoo@test.com</td>
+      <td>111-3333</td>
+    </tr>
+  </tbody>
+  <tfoot style="background-color: lightgray ;"> <!-- tfoot은 기본 왼쪽 정렬이다. -->
+    <tr>
+      <td>번호</td>   
+      <td>이름</td>
+      <td>이메일</td>
+      <td>전화번호</td>
+    </tr>
+  </tfoot>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

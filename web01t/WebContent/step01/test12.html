@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <title></title>
 <style>
+/*
 h1,h2,h3,h4,h5,h6 {
   /* border: 1px solid red; */
   border-left: 10px solid blue;
   padding-left: 10px;
 }
-
+*/
 p {
   border-width: 2px;
   border-color: blue;
@@ -51,21 +52,61 @@ a:HOVER { /* 마우스가 링크 위에 있다 */
 	color: white;
 }
 
+food {
+  font-size: 150%;
+  font-weight: bold;
+  text-decoration: underline;
+}
+price {
+  font-style: italic;
+  background-color: yellow;
+}
+
+ul {
+  list-style: upper-roman;
+}
+
 </style>
 </head>
 <body>
-<!-- 다른 문서와 연결하기(anchor) -->
-<a href="test01.html" class="btn">test01 - HTML 기본 구조</a>
-<a href="test02.html" class="btn primary">test02 - h1,h2,h3,... 태그</a>
-<a href="test03.html" class="btn">test03 - p 태그</a>
-<a href="test04.html" class="btn">test04 - br, hr</a>
 
-<!-- 다른 서버를 가리킬 때는 http:// 으로 시작해야 한다. -->
-<a href="http://www.daum.net">다음</a>
-<a href="http://www.apple.com">애플</a>
+<!-- 간단한 목록을 만드는 엘리먼트 
+1) 자동으로 번호를 붙이는 엘리먼트: ordered list
+2) 번호를 붙이지 않는 엘리먼트: unordered list
+-->
+<h1>간식</h1>
+<ol>
+  <li>피자</li> <!-- list item의 약자 -->
+  <li>닭강정</li>
+  <li>떡볶이</li>
+</ol>
+
+<h1>식사</h1>
+<ul>
+  <li>라면</li>
+  <li>밥</li>
+  <li>짜장면</li>
+</ul>
+
+<h1>음료</h1>
+&nbsp;&nbsp;* 사이다<br>
+&nbsp;&nbsp;* 콜라<br>
+&nbsp;&nbsp;* 쥬스<br>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
