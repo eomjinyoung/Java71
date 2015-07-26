@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+변수나 값의 타입을 확인하는 방법
+=> typeof 변수(또는 값)
+
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+// 자바스크립트 엔진에게 문법을 엄격하게 검사하도록 설정한다.
+// 스크립트 태그의 시작에 선언해야 유효하다.
+// 이 선언문은 소속된 태그에 한정한다.
+// 즉, 다른 태그에는 영향을 끼치지 않는다.
+"use strict";
+
+var a;
+a = 20;
+console.log(typeof a);
+
+a = "okok";
+console.log(typeof a);
+
+a = true;
+console.log(typeof a);
+
+a = 3.14;
+console.log(typeof a);
+
+a = new Object();
+console.log(typeof a);
+
+a = function(){};
+console.log(typeof a);
+
+var b;
+console.log(typeof b);
+
+//"use strict"; // 중간에 선언하는 것은 무효다.
+
+c = 20;
+console.log(typeof c);
+</script>
+
+<script type="text/javascript">
+//"use strict"; // 각 script 태그 별로 설정해야 한다.
+
+d = 30;
+console.log(typeof d);
+</script>
+
+</body>
+</html>

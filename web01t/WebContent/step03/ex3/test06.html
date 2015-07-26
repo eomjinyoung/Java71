@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+"use strict";
+
+/* 함수 파라미터 
+*/
+function plus(a, b) { // 클로저
+	return a + b;
+}
+	
+// arguments[] 배열
+// => 함수에 전달되는 모든 값을 보관하는 배열
+// => 내부에 감춰져있다.	
+function plus2() {
+	return arguments[0] + arguments[1];
+}
+
+// 파라미터 선언과 상관없이
+// 모든 파라미터의 값은 arguments 배열에 보관된다. 
+function plus3(a) {
+	return a + arguments[1];
+}
+console.log(plus(10, 20));
+console.log(plus2(10, 20));
+console.log(plus3(10, 20));
+
+
+// 결론, 자바스크립트에서는 파라미터의 갯수나 
+// 타입에 따라 호출하는 함수를 구분할 수 없다.
+// => 오버로딩(overloading) 문법을 지원하지 않는다.
+
+function minus(a, b) {
+	return a + b;
+}
+/*
+function minus(a) {
+	return a + arguments[1];
+}
+function minus() {
+	return arguments[0] + arguments[1];
+}
+*/
+
+console.log(minus(10, 20, 30, 50));
+
+// arguments 배열을 사용할 때?
+// => 파라미터 값이 가변적일 때 사용하라.
+function sum() {
+	var s = 0;
+	for (var i in arguments) {
+		s += arguments[i];
+	}
+	return s;
+}
+
+console.log(sum(10));
+console.log(sum(10, 20));
+console.log(sum(10, 20, 30));
+console.log(sum(10, 20, 30, 40, 50, 60, 70, 80, 90));
+</script>
+</body>
+</html>

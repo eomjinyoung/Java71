@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+"use strict";
+
+/* 함수 레퍼런스
+=> 함수 객체를 가리키는 변수
+=> 자바스크립트는 함수를 객체로 취급하기 때문에
+   값처럼 주고 받을 수 있다.
+*/
+
+function plus(a, b) {
+	return a + b;
+}
+
+function minus(a, b) {
+	return a - b;
+} 
+
+function multiple(a, b) {
+	return a * b;
+}
+
+function divide(a, b) {
+	return a / b;
+}
+
+// 함수 이름은 함수의 주소를 저장하고 있는 변수다.
+var p = plus; 
+console.log(p(10, 20));
+
+p = minus;
+console.log(p(10, 20));
+
+p = multiple;
+console.log(p(10, 20));
+
+p = divide;
+console.log(p(10, 20));
+
+
+</script>
+</body>
+</html>

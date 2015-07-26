@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/* || 연산자의 활용 
+1) statement1 || statement2
+   => 앞의 값을 boolean으로 변환한 후 true이면 앞의 값을 리턴
+   => false이면 다음 값을 리턴  
+*/
+
+var a = 42;
+var b = "abc";
+var x;
+
+a || (x = "hahaha");
+console.log(x);
+
+var value = Number(prompt("값을 입력하시오!"));
+/*
+if ((value % 2) == 0) {
+	console.log("짝수입니다.");
+} else {
+	console.log("홀수입니다.");
+}
+*/
+ 
+(value % 2) > 0 || console.log("짝수입니다.2");
+(value % 2) == 0 || console.log("홀수입니다.2");
+	
+
+
+
+</script>
+</body>
+</html>

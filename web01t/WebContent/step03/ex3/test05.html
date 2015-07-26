@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+"use strict";
+
+/* 클로저 함수 
+=> 함수 내부에서 생성한 함수 
+*/
+function makeFunc(op) {
+	switch(op) {
+	case '+': return plus;
+	case '-': return minus;
+	case '*': return multiple;
+	default: return divide;
+	};
+	
+	function plus(a, b) { // 클로저
+		return a + b;
+	}
+	
+	function minus(a, b) { // 클로저
+		return a - b;
+	} 
+	
+	function multiple(a, b) { // 클로저
+		return a * b;
+	}
+	
+	function divide(a, b) { // 클로저
+		return a / b;
+	}
+}
+
+// makeFunc()을 통해 계산을 수행하는 함수(클로저)를 얻는다.
+var p = makeFunc("+");
+console.log(p(40, 20));
+
+p = makeFunc("-");
+console.log(p(40, 20));
+
+p = makeFunc("*");
+console.log(p(40, 20));
+
+p = makeFunc("/");
+console.log(p(40, 20));
+
+</script>
+</body>
+</html>

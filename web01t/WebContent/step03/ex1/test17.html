@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+배열 다루기3
+=> 반복문 대신 함수를 이용한 배열 처리
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+"use strict";
+
+//2) 호출될 함수를 익명 함수로 만들어 해당 코드 가까이에 삽입
+// forEach(배열, 함수);
+function forEach(arr, func) {
+  for (var i in arr) {
+    func(i, arr[i]);
+  }
+}
+
+
+forEach(["홍길동", 100, 90, 80, "임꺽정", 90, 90, 100]
+	, function(index, value) {
+	console.log(index, value);
+});
+
+console.log("--------------------------");
+
+//3) 자바스크립트 배열은 이미 forEach()라는 함수를 갖고 있다.
+["홍길동", 100, 90, 80, "임꺽정", 90, 90, 100].forEach(
+	function(value, index){
+		console.log(index, value);
+	});
+
+</script>
+</body>
+</html>
+
+
+
+

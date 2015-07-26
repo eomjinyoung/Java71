@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+데이터 암시적/명시적 형변환
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+"use strict";
+// 자바스크립트 암시적 형변환 규칙
+
+//1)  숫자와 문자를 연산할 때: 
+// => string ---> number
+console.log(42 == "42"); // true
+// "42" == "42"?
+// 42 == 42? (YES)
+
+//2) 어떤 타입의 값과 boolean 타입의 값을 비교
+// => boolean ---> number
+console.log("42" == true); // false: "42" == 1, 42 == 1
+console.log("1" == true);  // true: "1" == 1, 1 == 1
+console.log("-------------------------------");
+
+//3) null와 undefined 비교
+// => null == undefined : true이다.
+// => null과 undefined는 값이 없다는 뜻이다.
+//    따라서 값과 비교하면 당연히 false이다.
+console.log(null == undefined); // true
+console.log(null == false);		// false
+console.log(undefined == false); // false
+console.log(null == true);		// false
+console.log(undefined == true);	// false
+console.log(null == "");		// false
+console.log(undefined == "");	// false
+ console.log(null == 0);		// false
+console.log(undefined == 0);	// false
+
+// 4) 배열 객체와 값의 비교
+// => 배열에 값이 한 개 있을 때는 일반 변수처럼 다룰 수 있다.
+console.log(42 == [42]);     // true
+console.log("42" == [42]);	 // true	
+console.log(42 == ["42"]);   // true
+console.log("42" == ["42"]); // true
+// => 배열에 값이 여러 개일 경우
+console.log(42 == [42,42]);     // false
+console.log("42" == [42,42]);	 // false 	
+console.log(42 == ["42","42"]);   // false
+console.log("42" == ["42","42"]); // false
+console.log("---------------------------");
+
+// 엄격히 값을 비교하고 싶을 때! : ===
+// => 데이터 타입까지 일치하는지 여부를 검사한다.
+// => 암시적 형변환을 하지 않는다.
+console.log(42 == "42"); // true
+console.log(42 === "42"); // false
+</script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+숫자 다루기
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+"use strict";
+
+var a = 20;
+var b = 30.2;
+var c = 0.5;
+var d = .5; // 0 생략 가능
+
+console.log(a, b, c, d);
+
+var e = 345.678;
+console.log(e.toFixed(0)); // 346
+console.log(e.toFixed(1)); // 345.7
+console.log(e.toFixed(2)); // 345.68
+console.log(e.toFixed(3)); // 345.678
+console.log(e.toFixed(4)); // 345.6780
+console.log(e.toFixed(5)); // 345.67800
+console.log("----------------------");
+
+var f1 = 0.1;
+var f2 = 0.2;
+var f3 = 0.3;
+
+console.log(f1); // 0.1
+console.log(f2); // 0.2
+console.log(f3 == (f1 + f2)); // false
+console.log(f1 + f2); // 0.30000000000000004
+                      // 부동 소수점 연산 일반 오류!
+
+// 부동소수점 연산 결과의 오류를 해결하는 방법
+// => 아주 작은 임의의 수가 더해지는 오류!
+// => 부동소수점 표현과 연산 방법: IEEE 754에 정의되어 있다.
+var EPSILON = Math.pow(2, -52);
+
+if (((f1 + f2) - f3) < EPSILON) {
+	console.log("f3와 f1 + f2가 같다");
+}
+
+//최근 자바스트립트 버전은 엡실론 값을 Number 객체에
+//정의하였다.
+if (((f1 + f2) - f3) < Number.EPSILON) {
+	console.log("Number.EPSILON => f3와 f1 + f2가 같다");
+}
+
+//NaN(Not a Number)
+var v1 = 2 / "OK";
+console.log(v1);
+console.log("v1=", typeof v1, v1);
+
+var v2 = NaN; // NaN을 변수에 할당할 수 있다.
+console.log("v2=", typeof v2, v2);
+
+console.log(v2 == NaN);  // NaN는 undefined와 다르게
+                         // 직접 비교할 수 없다.
+console.log(window.isNaN(v2));
+
+var v3 = undefined;
+console.log("v3=", typeof v3, v3);
+console.log(v3 == undefined);
+
+// infinity(무한을 뜻하는 상수값)
+var v4 = 1 / 0;
+var v5 = -1 / 0;
+console.log(v4); // Infinity
+console.log(v5); // -Infinity
+
+console.log(v4 == Infinity); // true
+console.log(v5 == -Infinity); // true
+
+</script>
+
+</body>
+</html>

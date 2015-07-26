@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/* for .. in 
+for (var 인덱스 in 배열) {
+}
+
+for (var 프로퍼티명 in 객체) {
+}
+*/
+
+var arr = [10, 20, 30, 40];
+for (var i in arr) {
+	console.log(i, arr[i]);
+}
+console.log("-----------------------");
+
+var obj = new Object();
+obj.name = "홍길동";
+obj.kor = 100;
+obj.eng = 80;
+obj.math = 90;
+
+for (var propName in obj) {
+	console.log(propName, obj[propName]);
+}
+
+
+</script>
+</body>
+</html>

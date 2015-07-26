@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+변수와 window 객체 
+=> window 객체
+   - 웹 브라우저의 자바스트립트 엔진에서 기본으로 제공하는 객체.
+   - 주의! nodeJS는 웹 브라우저가 아니기 때문에 
+     window 객체가 없다.
+   - 웹 브라우저를 다루는 기능이 들어 있다.
+
+=> script 태그에 선언하는 모든 변수는 
+   window 객체에 자동으로 소속된다.
+=> 보통 window 객체에 소속된 변수를 글로벌 변수라고 부른다.   
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+"use strict";
+
+var a = 20;
+console.log(a); // window 객체 멤버는 window를 생략할 수 있다.
+console.log(window.a);
+
+window.a = 30;
+console.log(a);
+console.log(window.a);
+
+window.alert("하하하");
+alert("호호호");
+
+</script>
+
+</body>
+</html>

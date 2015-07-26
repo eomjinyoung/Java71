@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+배열 다루기
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+"use strict";
+
+//1) 배열 생성과 출력
+var arr1 = [90, 100, 90];
+for (var i = 0; i < arr1.length; i++) {
+	console.log(arr1[i]);
+}
+console.log("-----------------");
+
+//2) Array() 메서드를 이용하여 배열 생성하기
+//new : 일단 빈 객체 생성한다.
+//Array() : 빈 객체에 배열을 다루는 변수와 메서드를 넣는다.
+var arr2 = new Array(100, 90, 80); 
+for (var i = 0; i < arr2.length; i++) {
+	console.log(arr2[i]);
+}
+console.log("---------------");
+
+//3) 배열 생성 
+var arr3 = []; // == new Array();
+arr3.push(80);
+arr3.push(90);
+arr3.push(100);
+for (var i = 0; i < arr3.length; i++) {
+	console.log(arr3[i]);	
+}
+
+//4) [] 와 new Array()는 똑 같다.
+console.log(typeof arr1);
+console.log(typeof arr2);
+console.log(typeof arr3);
+
+//5) 배열 값 지정이 자유롭다.
+var arr4 = [];
+arr4[0] = 100;
+arr4[1] = 200;
+arr4[2] = 300;
+for (var i = 0; i < arr4.length; i++) {
+	console.log(arr4[i]);	
+}
+console.log("--------------------");
+
+arr4[10] = 1000;
+for (var i = 0; i < arr4.length; i++) {
+	console.log(i, arr4[i], "arr4.get(" + i + ")");	
+}
+
+
+
+</script>
+
+</body>
+</html>

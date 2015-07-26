@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+배열 다루기2
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+"use strict";
+
+// 자바스크립트의 배열은 자바의 ArrayList와 유사하다.
+// 배열 항목의 타입이 다를 수 있다.
+var arr1 = ["홍길동", 100, 90, 80, "임꺽정", 90, 90, 100]
+for (var i in arr1) {
+	console.log(i, arr1[i], typeof arr1[i]);
+}
+
+// 중간 인덱스를 건너 뛰고 값을 입력할 수 있다.
+var arr2 = [100, 200];
+arr2[10] = 500;
+console.log(arr2.length);
+
+// 배열 값 꺼내기
+var arr3 = ["임꺽정", "홍길동", "유관순", "안중근", "윤봉길"];
+// 1) 단순조회 
+console.log(arr3[0], arr3[1], arr3[2], arr3[3], arr3[4]);
+console.log(arr3[0], arr3[1], arr3[2], arr3[3], arr3[4]);
+// 2) 배열에 꺼내고 제거하는 방법
+// => pop() 인덱스의 역순으로 꺼낸다.
+console.log(arr3.pop(), arr3.pop(), arr3.pop(), arr3.pop());
+console.log(arr3.pop(), arr3.pop(), arr3.pop());
+
+// 다차원 배열
+var arr4 = ["홍길동", [100, 90, 80], "임꺽정", [70, 60, 50]];
+for (var i in arr4) {
+	if (typeof arr4[i] == 'string') {
+		console.log(arr4[i]);
+	} else {
+		var sum = 0, aver = 0;
+		for (var x in arr4[i]) {
+			sum += arr4[i][x];
+		}
+		aver = sum / 3;
+		console.log("합계=", sum, "평균=", aver);
+	}
+}
+
+</script>
+
+</body>
+</html>

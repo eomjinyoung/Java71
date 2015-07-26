@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+/*
+h1,h2,h3,h4,h5,h6 {
+  /* border: 1px solid red; */
+  border-left: 10px solid blue;
+  padding-left: 10px;
+}
+*/
+p {
+  border-width: 2px;
+  border-color: blue;
+  border-style: dashed;
+  background-color: yellow;
+  padding: 10px;
+}
+
+.ohora {
+  border: 10px dotted white;
+}
+
+.btn {
+  display: inline-block; /* block처럼 자신만의 영역을 유지한다. inline처럼 라인에 포함됨*/
+  border: 1px solid gray;
+  background-color: lightgray;
+  margin: 5px; /* 테두리 바깥 쪽의 여백 지정 */
+  padding: 10px;/* 테두리 안 쪽의 여백 지정 */
+  text-decoration: none; /* a 태그의 밑줄 제거하기 */
+  border-radius: 5px; /* 모서리 둥글게 다듬기 */
+}
+
+.primary {
+  border-style: none;
+  background-color: lightskyblue;
+  color: white;
+  font-weight: bold;
+}
+
+.btn:HOVER { /* 마우스가 링크 위에 있다 */
+	background-color: blue;
+	color: white;
+}
+
+food {
+  font-size: 150%;
+  font-weight: bold;
+  text-decoration: underline;
+}
+price {
+  font-style: italic;
+  background-color: yellow;
+}
+
+ul {
+  list-style: upper-roman;
+}
+
+dt {
+  background-color: yellow;
+  margin-right: 820px;
+  text-align: right;
+}
+
+table {
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+}
+
+th, td {
+  /* border: 1px solid black; */
+  padding: 5px;
+}
+
+.writer {
+  color: blue;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<button type="button" class="btn primary"
+  onclick="document.getElementById('d1').style.display='none'">폼 감추기</button> |
+<button type="button" class="btn primary"
+  onclick="document.getElementById('d1').style.display=''">폼 보이기</button>
+
+<!-- div와 span 사용하기
+1) div: UI를 블록 단위로 묶을 때 사용. block 유형이다. 곧 줄 전체를 점유한다.
+2) span: 콘텐츠를 분류할 때 사용. inline 유형이다. 곧 줄 안에 포함된다.
+ -->
+<div id="d1">
+<h1>게시물 입력</h1>
+<form>
+제목: <input type="text" name="title"><br>
+내용: <textarea name="content" rows="5" cols="50"></textarea><br>
+<input type="submit" value="등록">
+</form>
+</div> 
+
+<div id="d2">
+<h1>게시물 목록</h1>
+<table border="1">
+<tr><th>번호</th><th>제목</th><th>조회수</th></tr>
+<tr><td>1</td><td>aaaaaa(<span class="writer">홍길동</span>)</td><td>20</td></td>
+<tr><td>2</td><td>bbbbb(<span class="writer">임꺽정</span>)</td><td>0</td></td>
+<tr><td>3</td><td>cccccccccccccccc(<span class="writer">유관순</span>)</td><td>1320</td></td>
+</table>
+<a href="#">새 글</a>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

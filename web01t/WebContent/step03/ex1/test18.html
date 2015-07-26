@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+데이터 암시적/명시적 형변환
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+"use strict";
+
+//1) boolean 형으로 변환
+// 자바: (int)값
+// 자바스크립트: 함수(값)
+console.log(0, Boolean(0)); // false
+console.log(1, Boolean(1)); // true
+console.log(-1, Boolean(-1)); // true
+console.log(180, Boolean(180)); // true
+console.log('', Boolean('')); // false 
+console.log(' ', Boolean(' ')); // true
+console.log('   ', Boolean('   ')); // true
+console.log('true', Boolean('true')); // true
+console.log('false', Boolean('false')); // true (주목)
+console.log(null, Boolean(null)); // false
+console.log(undefined, Boolean(undefined)); //false
+console.log(NaN, Boolean(NaN)); // false
+console.log("-----------------------------");
+
+//2) number 형으로 변환
+console.log(true, Number(true));		// 1
+console.log(false, Number(false));		// 0
+console.log('', Number(''));			// 0
+console.log(' ', Number(' '));			// 0
+console.log('  ', Number('  '));		// 0
+console.log('okok', Number('okok'));	// NaN
+console.log('true', Number('true'));	// NaN
+console.log('false', Number('false'));	// NaN
+console.log('12', Number('12'));		// 12
+console.log('017', Number('017'));		// 17
+console.log(null, Number(null));		// 0
+console.log(undefined, Number(undefined));	// NaN
+console.log(NaN, Number(NaN));				// NaN
+console.log('25000원', Number('25000원'));  // NaN
+console.log('$25000', Number('$25000'));	// NaN
+console.log('25000원', parseInt('25000원')); // 25000
+console.log('원25000', parseInt('원25000')); // NaN
+console.log([], Number([]));			// 0
+
+// 배열 항목이 한 개인 경우 그 항목의 값을 Number()로 변환한다.
+console.log([10], Number([10]));		// 10 
+console.log(["10"], Number(["10"]));	// 10
+
+// 배열 항목이 두 개인 경우 변환할 수 없다.
+console.log([10,20], Number([10,20]));	// NaN
+console.log(["10","20"], Number(["10","20"]));	// NaN 
+console.log({}, Number({})); 			// NaN
+console.log("----------------------------------------");
+
+//3) string 으로 변환하기
+console.log(String(true)); // "true"
+console.log(String(false));	// "false"
+console.log(String(12));	// "12"
+//console.log(String(017)); //strict 모드에서는 8진수 표현 불가하다.
+console.log(String(null));	// "null"
+console.log(String(undefined)); // "undefined"
+console.log(String(NaN));	// "NaN"
+console.log(String([]));	// ""
+console.log(String({}));	// [Object object]
+</script>
+</body>
+</html>
+
+
+
+

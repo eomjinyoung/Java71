@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+자바스크립트 리터럴(값을 표현한 코드)
+number: 10, 3.14
+string: "문자열", '문자열'
+boolean: true, false
+object: new Object(), {}, null
+function: new function(){}
+undefined
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+"use strict";
+
+console.log(typeof 10);
+console.log(typeof 3.14);
+console.log(typeof "문자열");
+console.log(typeof '문자열');
+console.log(typeof true);
+console.log(typeof false);
+console.log(typeof new Object());
+console.log(typeof {});
+console.log(typeof null);
+console.log(typeof aa);
+
+var bb = 20;
+console.log(typeof bb);
+
+bb = null; // null은 object 타입으로 간주된다.
+console.log(typeof bb);
+
+bb = undefined; // undefined 만들고 싶으면, 정확하게 설정하라.
+console.log(typeof bb);
+
+// 다음 조건문은 검사 결과 false이다.
+// => 이유: typeof의 리턴 값은 문자열이기 때문.
+if (typeof bb == undefined) { 
+	console.log("방법1: bb는 undefined이다.");
+}
+
+if (typeof bb == "undefined") { 
+	console.log("방법2: bb는 undefined이다.");
+}
+
+</script>
+
+</body>
+</html>
