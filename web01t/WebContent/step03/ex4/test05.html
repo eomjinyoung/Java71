@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+"use strict";
+
+/* 단축 문법을 사용하여 객체 생성하기
+*/
+//1) 방법1
+var obj1 = {
+	name: "홍길동",
+	kor: 100,
+	"eng": 80,
+	'math': 90,
+	sum: function() {
+		return this.kor + this.eng + this.math;
+	},
+	"aver": function() {
+		return this.sum() / 3;
+	}
+};
+
+console.log(obj1);
+console.log(obj1.sum());
+console.log(obj1.aver());
+
+//2) 방법2: 객체 속성에 접근하기
+var scores = {
+	"100": {name:"홍길동",kor:100,eng:80,math:100},
+	'200': {"name":'임꺽정',"kor":100,"eng":80,"math":100},
+	"300": {'name':"홍길동",'kor':100,"eng":80,"math":100},
+	"s400": {'name':"홍길동",'kor':100,"eng":80,"math":100},
+	"students": [{'name':"홍길동1",'kor':100,"eng":80,"math":100},
+		{'name':"홍길동2",'kor':100,"eng":80,"math":100},
+		{'name':"홍길동3",'kor':100,"eng":80,"math":100}]
+};
+
+console.log(scores["100"].name, 
+	scores["100"].kor,
+	scores["100"].eng,
+	scores["100"].math);
+	
+console.log(scores.s400.name, 
+	scores.s400.kor,
+	scores.s400.eng,
+	scores.s400.math);
+
+console.log(scores.students[1].name);
+
+/*
+HashMap score1 = new HashMap();
+score1.put("name", "홍길동");
+score1.put("kor", 100);
+score1.put("eng", 80);
+score1.put("math", 100);
+
+HashMap scores = new HashMap();
+scores.put("100", score1);
+
+HashMap obj = scores.get("100");
+String name = obj.get("name");
+...
+*/
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+apply plugin: 'java' // 자바 관련 명령이 들어 있는 그래들 플러그인
+//apply plugin: 'eclipse' // 이클립스 관련 명령이 들어 있는 그래들 플러그인
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'  // 'eclipse' 플러그인을 포함하고 있다.
