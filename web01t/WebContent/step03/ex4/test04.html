@@ -71,7 +71,7 @@ console.log(obj5);
 console.log(obj6);
 
 //4) 생성자 함수 만들기
-function score(name, kor, eng, math) {
+function Score(name, kor, eng, math) {
 	// 객체 주소를 받는 숨겨진 변수가 있다. 
 	// 그 변수의 이름은 this이다.
 	this.name = name;
@@ -82,13 +82,12 @@ function score(name, kor, eng, math) {
 	this.aver = this.sum / 3;
 }
 
-var obj7 = new score("이봉창", 100, 100, 90);
-var obj8 = new score("안창호", 100, 100, 100);
+var obj7 = new Score("이봉창", 100, 100, 90);
+var obj8 = new Score("안창호", 100, 100, 100);
 
 console.log(obj7);
 console.log(obj8);
 
-score("나도모르게", 100, 100, 90);
 
 </script>
 </body>

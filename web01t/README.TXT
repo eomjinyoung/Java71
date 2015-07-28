@@ -49,11 +49,61 @@
   => Gradle Build..에서 
      eclipse 명령을 다시 실행하라!
      
+8. 프로젝트 빌드 명령어 소개
+  => clean
+     /build 폴더를 제거한다.
+  => compileJava
+     /src/main/java 폴더의 소스 파일을 컴파일 하여 
+     /build/classes/main 폴더에 클래스 파일을 둔다.
+  
+  => processResources
+     /src/main/resources 폴더에 있는 파일을
+     /build/resources/main 폴더에 복사한다.
+  
+  => classes
+     compileJava + processResources 수행한다.   
+        
+  => compileTestJava
+     classes 수행한다.
+     /src/test/java 폴더의 소스 파일을 컴파일하여
+     /build/classes/test 폴더에 클래스 파일을 둔다.     
      
+  => jar
+     classes 수행한다.
+     /build/libs 폴더에 컴파일된 클래스 파일과 리소스 파일을 
+     .jar 파일로 묶어서 저장한다.
+  
+  => build
+       모든 빌드 작업을 수행한다.   
      
-     
-     
-     
+9. 소스 파일의 문자집합과 컴파일을 수행할 자바 버전 지정하기
+  => 소스 파일의 문자집합 지정하기.
+     Gradle은 소스 파일의 문자집합이 운영체제의 기본 문자집합으로 되어있다고
+       간주한다. 
+       그래서 컴파일할 때 한글 부분에 오류가 발생한다.
+    => 해결 방안
+       build.gradle에 소스 파일이 어떤 문자집합으로 인코딩 되었는지 알려준다.
+  
+  => 자바 문법의 버전을 지정한다.
+  
+10. 의존 라이브러리 자동으로 가져오기.
+  => 의존 라이브러리를 가져올 서버 지정하기
+    repositories {
+      // 메이븐 중앙서버(https://repo1.maven.org/maven2/)에서 다운로드 받는다. 
+      mavenCentral() 
+    }
+                
+  => 의존 라이브러리 지정
+    dependencies {
+      //compile "그룹이름:라이브러리이름:버전"
+      compile 'org.springframework:spring-context:4.1.7.RELEASE' 
+      compile 'commons-codec:commons-codec:1.10'
+    }
+      
+11. 스프링 MVC 프로젝트 준비
+  => 의존 라이브러리 가져오기
+    compile     
+ 
      
      
      
