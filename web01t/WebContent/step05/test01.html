@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button id='btn1' type='button' 
+  onclick="var message='okok'; alert(message); for (var i = 0; i < 10; i++) {console.log(i);}">버튼1</button><br>
+  
+<button id='btn2' type='button' 
+  onclick="btn2_onclick();">버튼2</button><br>
+
+<button id='btn3' type='button'>버튼3</button><br>
+
+<button id='btn4' type='button'>버튼4</button><br>
+
+<script type="text/javascript">
+/*
+이벤트? 시스템 상태 알림이나 사용자의 액션에 대해 알림.
+알림을 받았을 때, 작업할 게 있다면 함수를 등록하라!
+=> 웹 브라우저는 이벤트가 발생하면 그 이벤트에 대해 등록된 함수를 호출한다.
+=> 이렇게 이벤트가 발생했을 때 호출되는 함수를 "리스너"라고 부른다.
+
+이벤트 처리 방법
+1) 태그에 자바스크립트 코드 작성
+	<태그명 이벤트처리함수명="자바스크립트코드">
+	예) <button onclick="alert('okok')">버튼</button>
+	
+	=> 간단한 자바스크립트 코드를 넣을 때 적당하다.
+	=> 긴 코드를 삽입하면 유지보수가 어려워진다.
+
+2) 태그에 자바스크립트 코드 작성2
+  => 이전 방식의 문제점을 해결하기 위함.
+  => 별도의 함수를 만들고 그 함수에 이벤트를 처리하는 코드를 넣는다.
+  => 태그에서는 그 함수를 호출하는 코드만 둔다.
+
+3) 자바스크립트를 태그와 완전히 분리한다.
+  => 태그에 자바스크립트 코드가 있으면, 태그를 다른 화면에서 재사용하기가 불편하다.
+  => 태그의 재 사용성을 높이기 위해서는 태그와 스크립트를 완전히 분리해야 한다.
+  => 자바스크립트에 해당 태그를 찾아 이벤트 처리 함수를 등록한다.
+  => 단점: 오직 한 개의 함수만 등록할 수 있다.
+
+4) 이벤트 처리 함수를 여러 개 등록하고 싶을 때 사용.
+  => 태그.addEventListener("이벤트명", 함수객체);
+*/
+//방법2
+function btn2_onclick() {
+	  var message='버튼2 눌렀음'; 
+	  alert(message); 
+	  for (var i = 0; i < 10; i++) {
+		  console.log(i);
+		}  
+}
+
+//방법3
+var btn3 = document.getElementById('btn3');
+btn3.onclick = function() {
+	alert('오호라.. 버튼3 눌렀네.');
+};
+
+//방법4
+var btn4 = document.getElementById('btn4');
+// 클릭 이벤트의 이름은 'click'이다. 'onclick'은 함수 이름이다. 주의할 것!
+btn4.addEventListener('click', function(){
+	alert('11111');
+});
+btn4.addEventListener('click', function(){
+	alert('22222');
+});
+
+//addEventListener에서 등록된 함수와 동일하게 순서대로 호출된다.
+btn4.onclick = function() { 
+  alert('xxxxxx');
+};
+
+btn4.addEventListener('click', function(){
+	alert('33333');
+});
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
