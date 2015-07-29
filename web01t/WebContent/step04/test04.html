@@ -1,31 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!-- 
-주제: absolute layout
-=> absolute, fixed, relative 타입을 가진 조상을 기준으로
-   위치를 지정한다.
-   만약 위의 타입을 가진 조상이 없다면, body를 기준으로 위치를 잡는다. 
-=> 위치를 지정하는 방법: left, top, right, bottom 
-
-1. absolute
-    => 공중 부양한다. 
-    => 웹 브라우저의 위치 제어(왼쪽에서 오른쪽, 위에서 아래, 순서대로 출력)에서 벗어난다. 
-    => left, right, top, bottom을 사용하여 위지를 마음대로 조정할 수 있다.
-    => 기준은 조상 중에 absolute, fixed, relative를 갖는 엘리먼트이다.
-    
-2. fixed
-    => 공중 부양한다.
-    => 웹 브라우저 창의 좌표를 기준으로 위치를 지정한다.
-    => 화면 스크롤에 영향을 받지 않는다.
-    
-3. relative
-    => 웹 브라우저의 위치 제어에 순응(현재 자리 고수)하면서 위/아래/좌/우로 이동한다.
-
-4. float
-    => 공중 부양한다.
-    => 현재 라인에서 좌/우로 정렬한다.
-     
-    
-   
+주제: fixed layout
  -->
 <html>
 <head>
@@ -101,6 +76,11 @@ div {
   font-size: 120%;
   font-weight: bold;
 }
+
+.miniIcon {
+  width: 10px;
+  height: 10px;
+}
 </style>
 </head>
 <body>
@@ -148,6 +128,11 @@ For more information, see our mission & vision statement.</p>
   <div id='footer'>
     <span id='copyright'>Copyright 2015</span> 
       <span id='owner'>비트캠프 자바71기</span>
+  </div>
+  
+  <div id='popup'>
+    <img src='http://www.bitcamp.co.kr/popup/imageview.bit?popupSeq=37'>
+    <img class='miniIcon' src='close.png'>
   </div>
 </div>
 </body>
