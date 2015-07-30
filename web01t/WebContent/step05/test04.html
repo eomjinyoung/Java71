@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+  border: 1px solid black;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+<div id='main'>main:div
+  <div id='d1'>d1:div
+    <div id='d11'>d11:div
+      <button id='btn1'>버튼1</button>
+    </div>
+    <div id='d12'>d12:div
+      <button id='btn2'>버튼2</button>
+    </div>
+  </div>
+  <div id='d2'>d2:div
+    <div id='d21'>d21:div
+      <button id='btn3'>버튼3</button>
+    </div>
+    <div id='d22'>d22:div
+      <button id='btn4'>버튼4</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+/* 이벤트가 상위 태그로 전달되는 것을 막기
+ * => 이벤트 버블링 막기
+ * => event.stopPropagation()
+ */
+ 
+document.getElementById('main').onclick = function() {
+	console.log('main...');
+};
+
+document.getElementById('d1').onclick = function(event) {
+  console.log('d1...');
+};
+	
+document.getElementById('d11').onclick = function(event) {
+  console.log('d11...');
+};	
+
+document.getElementById('d12').onclick = function(event) {
+  console.log('d12...');
+};
+
+document.getElementById('btn1').onclick = function() {
+  console.log('btn1...');
+  event.stopPropagation(); // 상위 태그로 버블링 하는 것을 취소한다.
+};
+
+document.getElementById('btn2').onclick = function() {
+  console.log('btn2...');
+  event.stopPropagation(); // 상위 태그로 버블링 하는 것을 취소한다.
+};
+
+document.getElementById('d2').onclick = function() {
+  console.log('d2...');
+};
+  
+document.getElementById('d21').onclick = function() {
+  console.log('d21...');
+};  
+
+document.getElementById('d22').onclick = function() {
+  console.log('d22...');
+};
+
+document.getElementById('btn3').onclick = function() {
+  console.log('btn3...');
+};
+
+document.getElementById('btn4').onclick = function() {
+  console.log('btn4...');
+};
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+  border: 1px solid black;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+<div id='main'>main:div
+  <div id='d1'>d1:div
+    <div id='d11'>d11:div
+      <button id='btn1'>버튼1</button>
+    </div>
+    <div id='d12'>d12:div
+      <button id='btn2'>버튼2</button>
+    </div>
+  </div>
+  <div id='d2'>d2:div
+    <div id='d21'>d21:div
+      <button id='btn3'>버튼3</button>
+    </div>
+    <div id='d22'>d22:div
+      <button id='btn4'>버튼4</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+/* 이벤트 발생 원리
+1) 이벤트 발생
+* 캡쳐 단계(capture phase)
+2) DOM 트리에서 최상위 태그에게 전달한다.
+3) 최종 목적지 태그까지 하위 태그로 계속해서 전달한다.
+
+* 타켓 단계(target phase)
+4) 최종 목적지의 태그에서 이벤트를 처리한다.
+
+* 버블 단계(bubble phase)
+5) 상위 태그로 이벤트를 전달한다.
+    최상위 태그에 도달할 때까지 반복한다.
+
+    
+주의!
+이벤트 리스너는 타켓 단계나 버블 단계에서 호출된다.
+
+이벤트 리스너?
+이벤트가 발생되었을 때 호출되는 함수를 말한다.
+
+btn.onclick = function() {} <-- 이 함수가 이벤트 리스너이다.
+ */
+ 
+document.getElementById('main').onclick = function() {
+	console.log('main...');
+};
+
+document.getElementById('d1').onclick = function() {
+  console.log('d1...');
+};
+	
+document.getElementById('d11').onclick = function() {
+  console.log('d11...');
+};	
+
+document.getElementById('d12').onclick = function() {
+  console.log('d12...');
+};
+
+document.getElementById('btn1').onclick = function() {
+  console.log('btn1...');
+};
+
+document.getElementById('btn2').onclick = function() {
+  console.log('btn2...');
+};
+
+document.getElementById('d2').onclick = function() {
+  console.log('d2...');
+};
+  
+document.getElementById('d21').onclick = function() {
+  console.log('d21...');
+};  
+
+document.getElementById('d22').onclick = function() {
+  console.log('d22...');
+};
+
+document.getElementById('btn3').onclick = function() {
+  console.log('btn3...');
+};
+
+document.getElementById('btn4').onclick = function() {
+  console.log('btn4...');
+};
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
