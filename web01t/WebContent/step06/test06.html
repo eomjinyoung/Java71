@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+/* 엘리먼트의 콘텐츠 설정하기
+ * 1) 순순한 텍스트 설정하기 => 내용 중에 태그가 있더라도 그냥 텍스트로 간주한다.
+ *    태그객체.textContent = "텍스트";
+ *
+ * 2) 자식 태그를 포함한 콘텐츠 설정하기 => 콘텐츠를 파싱하기 때문에 내용 중에 태그가 있으면 실행한다.
+ *    태그객체.innerHTML = "태그....";
+ *
+ */
+
+alert('잠깐!');
+var e = document.createElement('div');
+e.textContent = "<h1>제목</h1><p>하하하하</p>";
+document.body.appendChild(e);
+
+alert('잠깐!');
+e = document.createElement('div');
+e.innerHTML = "<h1>제목</h1><p>하하하하</p>";
+document.body.appendChild(e);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

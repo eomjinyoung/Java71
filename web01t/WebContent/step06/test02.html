@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id='t1'>제목1</h1>
+<h2 id='t2'>제목2</h2>
+<h2 id='t3'>제목3</h2>
+
+<h1 id='t4'>제목4</h1>
+<h2 id='t5'>제목5</h2>
+
+<script type="text/javascript">
+/* 엘리먼트를 찾기
+ * 2) 태그 이름으로 찾기
+ */
+
+// 리턴 값은 배열이 아니라 HTMLCollection 타입이다.
+var collection = document.getElementsByTagName('h2');
+console.log(collection);
+
+// 배열이 아니기 때문에 다음과 같이 for..in..을 사용하면 
+// 원치 않은 반복까지 한다. => 해결책: 그냥 for(var i = 0; i < len, i++){} 써라!
+/*
+for (var i in collection) {
+	console.log(collection[i]);
+}*/
+
+alert('잠깐!');
+for (var i = 0; i < collection.length; i++) {
+	//console.log(collection[i]);
+	collection[i].textContent = "소제목";
+}
+
+ 
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
