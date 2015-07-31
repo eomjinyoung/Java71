@@ -3,29 +3,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+</head>
+<body>
+<h1>AJAX 단계3</h1>
+<textarea id='ta' rows='10' cols='60'></textarea>
+
+<h1>test..ok</h1>
 
 <script type="text/javascript">
-/* AJAX 단계2: 동기 방식의 문제점
- * => 서버가 응답할 때까지 리턴하지 않는다.
- * => 다음 명령문을 실행하는데 지체한다.
- * => 해결책
+/* AJAX 단계3: 동기 방식의 문제점 해결
       => 시간이 오래 걸리는 작업은 HTML의 맨 마직막에 두어라.
          즉, 일단 화면을 출력한 후에 변경하도록 한다.
          그래야 사용자가 기다리는데 지루해 하지 않는다.
-      => test04.html 참고 
  */
  
 var xhr = new XMLHttpRequest(); 
 xhr.open("GET", "boardlist.jsp", false);
 xhr.send();  
-</script>
 
-</head>
-<body>
-<h1>AJAX 단계2</h1>
-<textarea id='ta' rows='10' cols='60'></textarea>
-
-<script>
 var ta = document.getElementById('ta');
 ta.value = xhr.responseText;
 

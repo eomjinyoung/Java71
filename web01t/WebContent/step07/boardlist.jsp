@@ -1,6 +1,9 @@
 <%@ page language="java" 
     contentType="text/plain; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+//Thread.sleep(10000);
+%>    
 [
 {"no":1, "title":"제목1", "writer":"홍길동", "views":100},
 {"no":2, "title":"제목222222", "writer":"임꺽정", "views":90},
