@@ -37,6 +37,34 @@ var bit = function(value) {
   return ebox;
 }
 
+bit.ajax = function(url, settings) {
+	var xhr = new XMLHttpRequest();
+	
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4) {
+			if (settings.dataType == 'json') {
+				settings.success(JSON.parse(xhr.responseText));
+			} else {
+				settings.success(xhr.responseText);
+			}
+		}
+	};
+	
+	xhr.open(settings.method, url, true);
+	
+	xhr.send();
+};
+
+bit.getJSON = function(url, success) {
+	bit.ajax(url, {
+		method: 'GET',
+		dataType: 'json',
+		success: success
+	});
+};
+
+
+
 var $ = bit;
 
 

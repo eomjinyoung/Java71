@@ -14,18 +14,9 @@
 </tr>
 </table>
 
-<script type="text/javascript" src='bit04.js'></script>
+<script type="text/javascript" src='jquery-1.11.3.js'></script>
 
 <script type="text/javascript">
-/*
-$.ajax('boardlist.jsp', {
-	method: 'GET',
-	dataType: 'json',
-	success: function(result) {
-		prepareBoardTable(result);
-	}
-});
-*/
 $.getJSON('boardlist.jsp', function(result) {
     prepareBoardTable(result);
 });
