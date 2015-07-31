@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table id='boardTable' border='1'>
+<tr>
+  <th>번호</th> 
+  <th>제목</th> 
+  <th>작성자</th> 
+  <th>조회수</th>
+</tr>
+</table>
+
+<script type="text/javascript">
+/* AJAX 단계1
+ */
+ 
+//1. AJAX 요청을 담당할 객체 준비
+var xhr = new XMLHttpRequest(); 
+
+//2. 서버와 연결하기
+//   => 반드시 HTML을 다운로드 받은 서버로만 연결 가능하다.
+xhr.open("GET", "boardlist.jsp", false);
+//xhr.open("GET", "http://www.naver.com", false);
+
+//3. HTTP 요청 보내기
+xhr.send();  // 서버가 응답을 완료하면 리턴한다. (동기식 호출 방법: sychronous)
+
+alert('잠깐!');
+//4. 서버가 보낸 응답 결과 출력하기 
+console.log(xhr.responseText);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
