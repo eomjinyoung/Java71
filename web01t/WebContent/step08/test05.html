@@ -3,9 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<style type="text/css">
+#main {
+  width: 600px;
+  margin: 0px auto;
+}
+</style>
 </head>
 <body>
-<table id='boardTable' border='1'>
+<div id='main' class='container'>
+<img src='../step01/pic02.jpg' 
+      class="img-circle"><br>
+<table id='boardTable' class='table table-hover'>
 <tr>
   <th>번호</th> 
   <th>제목</th> 
@@ -14,7 +25,14 @@
 </tr>
 </table>
 
+<button type='button' class='btn btn-primary'>새 글</button>
+
+</div>
+
 <script type="text/javascript" src='jquery-1.11.3.js'></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 $.getJSON('boardlist.jsp', function(result) {
