@@ -47,7 +47,8 @@ public class LogonCheckInterceptor extends HandlerInterceptorAdapter {
 			String uri = request.getRequestURI();
 			if(		uri.indexOf("addUserView") != -1 	|| 	uri.indexOf("addUser") != -1 || 
 					uri.indexOf("loginView") != -1 			||	uri.indexOf("login") != -1 		|| 
-					uri.indexOf("checkDuplication") != -1 ){
+					uri.indexOf("checkDuplication") != -1 ||
+					uri.indexOf("FileUpload") != -1){
 				System.out.println("[ sdfsdf .... ]");
 				System.out.println("[ LogonCheckInterceptor end........]\n");
 				return true;
